@@ -42,7 +42,7 @@ const showId = (req, resp) => {
             ON tags.id = post_tag.tag_id
             JOIN posts 
             ON post_tag.post_id = posts.id
-            WHERE posts.id = 3
+            WHERE posts.id = ?
             `
             connection.query(tagSql, [id], (err, tags) => {
                 if (err) {
